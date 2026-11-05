@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gauranga Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<meta name="description" content="Gauranga Technologies — embedded systems, industrial IoT, product engineering and manufacturing. ISO 9001:2015 certified.">
+<link rel="icon" href="images/logo-sun.png">
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div class="prog" id="prog" aria-hidden="true"></div>
+<div class="cur-dot" aria-hidden="true"></div>
+<div class="cur-ring" aria-hidden="true"></div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap"><div class="frame hdr-in">
+    <a class="logo" href="#home" aria-label="Gauranga Technologies home">
+      <img src="images/logo-sun.png" alt="">
+      <span><b>Gauranga</b><small>TECHNOLOGIES</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary" id="nav"></nav>
+    <div class="hdr-cta">
+      <a class="btn btn-primary mag" href="#contact">Let’s Talk</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+    </div>
+  </div></div>
+</header>
+
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu"></div>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="ftr ink-band" id="ftr"></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="./js/main.js"></script>
+</body>
+</html>
