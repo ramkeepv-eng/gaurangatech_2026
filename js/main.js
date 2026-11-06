@@ -518,12 +518,18 @@ P.about = () => pageHero([['About Us']], 'About us', 'Driven by technology <span
   <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px"><span class="eyebrow rv">Quality &amp; certifications</span><h2 class="h2 rv" style="font-size:clamp(28px,3.2vw,44px)">ISO 9001:2015 <span class="hl">certified.</span></h2><p class="lead rv">Gauranga Tech is an ISO 9001:2015 certified organization, demonstrating our commitment to quality management, operational excellence, and customer satisfaction.</p><a class="btn btn-primary mag" href="#resources" style="align-self:flex-start">Open Resources ${ARR}</a></div>
   <div style="flex:1 1 300px;min-width:0;display:flex;justify-content:center"><div class="cert rv media" data-cur="view"><img src="${IMG('about-iso-cert')}" alt="ISO 9001:2015 certificate of registration" loading="lazy" style="transform:none"></div></div>
  </div>`) +
- S(`<div class="sec-head"><div><span class="eyebrow rv">Global presence</span><h2 class="h2 rv">India</h2></div></div>
-  <div class="map rv" id="mapbox"><canvas id="mapc" aria-hidden="true"></canvas>
-   <div class="pin" style="left:68.5%;top:44%"><i></i><span>Navi Mumbai · HQ</span></div>
-   <div class="pin" style="left:70.6%;top:52%"><i></i><span>Madurai · Studio</span></div>
-   <div class="pin left" style="left:22%;top:37%"><i></i><span>Houston</span></div>
-   <div class="pin left" style="left:90%;top:76%"><i></i><span>Boronia</span></div>
+ S(`<div class="sec-head"><div><span class="eyebrow rv">Location</span><h2 class="h2 rv">Visit Our Office</h2></div></div>
+  <div class="map rv" id="mapbox" style="aspect-ratio:21/9;min-height:360px">
+   <iframe 
+     title="Gauranga Technologies Location" 
+     src="https://maps.google.com/maps?q=Everest%20Nivara%20Infotech%20Park,%20TTC%20Industrial%20Area,%20Turbhe,%20Navi%20Mumbai%20400705&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+     width="100%" 
+     height="100%" 
+     style="border:0;display:block;width:100%;height:100%" 
+     allowfullscreen="" 
+     loading="lazy" 
+     referrerpolicy="no-referrer-when-downgrade">
+   </iframe>
   </div>
   <div class="grid g4" style="margin-top:20px">${OFFICES.map((o,i)=>`<div class="card tilt rv"><span class="eyebrow" style="font-size:11px">${esc(o[0])}</span><h3 style="font-size:20px">${esc(o[1])}</h3><p style="font-size:14px">${esc(o[2])}</p><p class="addr">${esc(o[3])}</p>${o[4]?`<span class="phone">${esc(o[4])}</span>`:''}</div>`).join('')}</div>`, 'alt') + ctaBand('Have an engineering challenge?','Tell us about your product, plant or project. Our engineering team will get back to you.','Let’s Talk','contact');
 
