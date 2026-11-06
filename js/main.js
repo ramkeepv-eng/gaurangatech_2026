@@ -377,7 +377,6 @@ P.home = () => `
    <div class="stat"><b><span class="count" data-to="10">10</span>+</b><span>Years in the industry</span></div>
    <div class="stat"><b><span class="count" data-to="500">500</span>+</b><span>Man-years of team experience</span></div>
    <div class="stat"><b>ISO 9001:2015</b><span>Certified quality management</span></div>
-   <div class="stat"><b><span class="count" data-to="3">3</span></b><span>Regions: India, USA, Australia</span></div>
  </div></div></section>
  <section style="background:var(--band);border-bottom:1px solid var(--line)"><div class="wrap"><div class="frame" style="padding-block:22px"><div class="trust"><span>Trusted by organisations including</span>
   <div class="marq" aria-label="Clients"><div class="marq-track">${[...CLIENTS,...CLIENTS].map((c,i)=>`<span ${i>=CLIENTS.length?'aria-hidden="true"':''}>${esc(c)}</span>`).join('')}</div></div>
