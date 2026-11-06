@@ -79,9 +79,7 @@ a.specpill:hover{border-color:var(--rust)}
 .hdr .frame{border-inline-color:transparent}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
-.logo img{width:36px;height:auto;display:block}
-.logo b{font-family:var(--f-display);font-stretch:112%;font-size:18px;letter-spacing:-.01em;display:block;line-height:1;color:var(--rust)}
-.logo small{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.24em;color:var(--muted);display:block;margin-top:4px}
+.logo img{height:56px;width:auto;display:block;object-fit:contain}
 .nav{display:flex;align-items:center;gap:2px}
 .nav > a,.nav > .dd > button{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:999px;font-size:14.5px;font-weight:500;text-decoration:none;color:var(--ink-7);background:none;border:0;cursor:pointer}
 .nav > a:hover,.nav > .dd > button:hover{color:var(--rust)}
@@ -590,8 +588,6 @@ h1,h2,h3,h4{font-stretch:100%;font-weight:650;letter-spacing:-.03em}
 .specpill{font-family:var(--f-body);text-transform:none;letter-spacing:0;font-size:14.5px;font-weight:600;border:0;background:none;padding:0;color:var(--rust);border-radius:0}
 .specpill i{display:inline-block;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.6;margin:0 2px}
 .crumbs,.kv span,.corner,.tag,.new,.tbc,.metrics > div > span,.stat > span,.dev .cap,.dev .no,.media .tagline,.band-img .facts span,.hc-cap,.pcol h4,.mono{font-family:var(--f-body);letter-spacing:0;text-transform:none}
-.logo b{font-stretch:100%}
-.logo small{font-family:var(--f-body);font-size:10.5px;letter-spacing:.14em}
 .pcol h4{font-size:13.5px;font-weight:600;color:var(--ink)}
 .panel a.pi b,.mnav a.ml,.mnav button.ml{font-stretch:100%}
 .tag{border:0;background:var(--band);border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:500;color:var(--ink-7)}
