@@ -108,7 +108,7 @@ a.specpill:hover{border-color:var(--rust)}
 .feat:hover{border-color:var(--sun)}
 .hdr-cta{display:flex;gap:10px;align-items:center}
 .burger{display:none;width:48px;height:48px;border-radius:999px;border:1px solid var(--ctl);background:#fff;cursor:pointer;align-items:center;justify-content:center}
-@media (max-width:1100px){.nav,.hdr-cta .btn{display:none}.burger{display:inline-flex}}
+@media (max-width:1200px){.nav,.hdr-cta .btn{display:none}.burger{display:inline-flex}}
 
 /* mobile menu */
 .mnav{position:fixed;inset:0;z-index:70;background:#fff;padding:calc(env(safe-area-inset-top,0px) + 12px) var(--gut-r) calc(env(safe-area-inset-bottom,0px) + 16px) var(--gut-l);display:flex;flex-direction:column;gap:6px;overflow-y:auto;transform:translateX(100%);transition:transform .4s var(--ease);visibility:hidden}
@@ -530,14 +530,14 @@ h2.rv.in,h1.rv.in{animation:headIn 1s var(--ease) backwards}
 .gal .hc-ui{margin-top:14px;border-top:0;padding-top:0}
 /* home stats + trust strip */
 .hstats{background:#fff;border-bottom:1px solid var(--line)}
-.hstats .frame{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-inline:0}
+.hstats .frame{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-inline:0}
 .hstats .stat > span{order:-1}
 .trust{display:flex;flex-wrap:wrap;align-items:center;gap:18px 32px}
 .trust > span{flex:0 0 auto;max-width:150px;font-size:14px;color:var(--muted);line-height:1.4}
 .trust .marq{flex:1 1 400px;min-width:0;padding-block:8px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .isob{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:#fff;font-weight:600;font-size:14px;color:var(--ink)}
 .isob svg{color:var(--rust)}
-@media (max-width:760px){.hstats .frame{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.hstats .frame{grid-template-columns:repeat(2,minmax(0,1fr))}.hstats .stat > span{min-height:3.2em}}
 /* capabilities */
 .caps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
 .caps > div{padding:26px 24px 26px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
@@ -572,7 +572,7 @@ h2.rv.in,h1.rv.in{animation:headIn 1s var(--ease) backwards}
 .ftr .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 .ftr .copybtn{border-color:rgba(255,255,255,.4);color:#fff;background:transparent}
 .fcontact{display:flex;flex-direction:column;gap:8px;margin-top:16px;font-size:14px}
-.fcontact a{display:inline-flex !important;align-items:center;gap:10px;padding:0 !important}
+.fcontact a{display:inline-flex !important;align-items:center;gap:10px;min-width:0;overflow-wrap:anywhere;padding:0 !important}
 .fcontact svg{color:var(--sun-100);flex:none}
 .ftr .frame.x::before,.ftr .frame.x::after{color:rgba(255,255,255,.45)}
 
@@ -708,10 +708,347 @@ a.card[data-fam]:hover{box-shadow:none;transform:none}
 .gal .hcbox{border:0;border-radius:24px}
 .gal .hc-s img{mix-blend-mode:multiply}
 .gal .hc-cap{font-size:13.5px}
-.hstats .stat b{font-size:clamp(30px,3.2vw,46px);white-space:nowrap}
+.hstats .stat b{font-size:clamp(28px,2.8vw,38px);white-space:nowrap}
 .alt .card[data-fam] .media{background:#fff}
 .card[data-ind] .mono,.metrics .mono{text-transform:none !important;letter-spacing:0 !important;font-family:var(--f-body) !important;font-size:13px !important}
 .caps ~ *,.rv.media{}
+
+/* ==========================================================================
+   STAGE 2: RESPONSIVE OPTIMIZATIONS (Cross-Device Pixel-Perfect System)
+   Maintains original desktop design 100% intact while perfecting responsiveness
+   across Desktop (1920, 1600, 1440, 1366), Laptop (1280, 1024),
+   Tablet (820, 768), and Mobile (480, 430, 414, 390, 375, 360).
+   ========================================================================== */
+
+/* Laptop / Small Desktop (1201px – 1280px) */
+@media (max-width: 1280px) and (min-width: 1201px) {
+  .panel-prod {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    padding: 16px;
+    width: min(920px, 92vw);
+  }
+  .panel-prod .feat {
+    display: none;
+  }
+}
+
+/* Tablet Landscape & Portrait (<= 920px / <= 768px) */
+@media (max-width: 920px) {
+  /* Replace squished multi-line slide labels with clean indicator bars + active caption */
+  .phero.hc-on .hc-dot .hc-l {
+    display: none !important;
+  }
+  .phero.hc-on .hc-dot {
+    min-height: 44px;
+    padding-top: 18px;
+    flex: 1 1 0;
+  }
+  .phero.hc-on .hc-dots {
+    gap: 10px;
+  }
+  .phero.hc-on .hc-cap {
+    display: flex;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.88);
+  }
+  .phero.hc-on .hc-cap b {
+    color: var(--sun);
+  }
+  .lineup > .side {
+    position: static;
+    top: auto;
+  }
+  .lineup > .stack {
+    flex: 1 1 100%;
+  }
+}
+
+/* Unified, Symmetric Stats Grid Alignment (<= 920px / Tablet & Mobile) */
+@media (max-width: 920px) {
+  .hstats .frame {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hstats .stat:nth-child(2) {
+    border-right: 0;
+  }
+  .hstats .stat:nth-child(3) {
+    grid-column: 1 / -1;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+  }
+  .hstats .stat {
+    padding: 22px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+  }
+  .hstats .stat > span {
+    font-size: 13px;
+    line-height: 1.35;
+    min-height: 2.7em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 6px;
+    color: var(--muted);
+  }
+  .hstats .stat b {
+    font-size: clamp(24px, 5vw, 28px);
+    line-height: 1.15;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile Landscape & Medium Breakpoints (<= 640px / <= 600px) */
+@media (max-width: 640px) {
+  .hero-grid {
+    gap: 28px;
+  }
+  /* Ensure inline-flex headings and tag containers wrap properly */
+  .band .h3[style*="flex:0 0 220px"],
+  .band .h3[style*="flex: 0 0 220px"] {
+    flex: 1 1 100% !important;
+  }
+  .band .tags[style*="flex:1 1 500px"],
+  .band .tags[style*="flex: 1 1 500px"] {
+    flex: 1 1 100% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .ftr-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-block: 48px 40px;
+  }
+  .ftr-cta .ctas {
+    width: 100%;
+  }
+}
+
+/* Tablet & Mobile Body Splitting (<= 540px) */
+@media (max-width: 540px) {
+  .cs-body {
+    gap: 32px;
+  }
+  .cs-body > aside,
+  .cs-body > article {
+    flex: 1 1 100%;
+  }
+  .kv span {
+    font-size: 12px;
+  }
+  .drawing {
+    max-width: 100%;
+  }
+  .drawing-top,
+  .drawing-foot {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+  .drawing .live {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  .trust > span {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Standard Mobile (<= 480px) */
+@media (max-width: 480px) {
+  /* Footer */
+  .ftr-cta .ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .ftr-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 36px;
+  }
+  .legal {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .legal a {
+    margin-left: 0;
+  }
+
+  /* Product Detail Layout */
+  .pd > .gal,
+  .pd > .sum {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .gal .dev {
+    aspect-ratio: 4/3;
+  }
+  .thumbs {
+    gap: 8px;
+  }
+
+  /* Sticky Tab Bar */
+  .tabbar .frame {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-inline: 16px;
+    scrollbar-width: none;
+  }
+  .tabbar .frame::-webkit-scrollbar {
+    display: none;
+  }
+  .tabbar button {
+    font-size: 13.5px;
+    padding: 14px 2px;
+    min-height: 44px;
+    flex: none;
+  }
+
+  /* Spec Sheet Table */
+  .spec {
+    min-width: 300px;
+    font-size: 13px;
+  }
+  .spec caption {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+  .spec th,
+  .spec td {
+    padding: 10px 12px;
+  }
+
+  /* Filter Chips & Search */
+  .chip {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 12.5px;
+  }
+  .search {
+    min-height: 46px;
+    padding: 0 14px;
+  }
+
+  /* Careers Job Cards */
+  .card.job {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .card.job .go {
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  /* Anatomy items */
+  .anat-item[aria-pressed="true"] {
+    transform: none;
+    box-shadow: var(--shadow-md);
+  }
+  .anat-fig {
+    max-width: 100%;
+  }
+
+  /* Forms & Modals */
+  .form-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+  .form-foot {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .form-foot .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .fld input,
+  .fld select,
+  .fld textarea {
+    min-height: 46px;
+    font-size: 14px;
+  }
+  .fld textarea {
+    min-height: 110px;
+  }
+}
+
+/* Small Mobile Screens (<= 430px) */
+@media (max-width: 430px) {
+  .phero.hc-on .h1,
+  .hc-t .h1 {
+    font-size: clamp(30px, 8.5vw, 38px);
+  }
+  .phero.hc-on .lead,
+  .hc-t .lead {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .phero.home {
+    min-height: clamp(520px, calc(100svh - 90px), 720px);
+  }
+  .band-img {
+    min-height: 260px;
+  }
+  .band-img .over {
+    padding: 18px 16px;
+    gap: 14px;
+  }
+  .band-img .over h2 {
+    font-size: 22px;
+  }
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Ultra-Compact Mobile Screens (<= 380px: iPhone SE, older Android) */
+@media (max-width: 380px) {
+  .hstats .stat {
+    padding: 16px 10px;
+  }
+  .hstats .stat b {
+    font-size: 22px;
+  }
+  .hstats .stat > span {
+    font-size: 11.5px;
+  }
+  .stat {
+    padding: 16px 10px;
+  }
+  .stat b {
+    font-size: 24px;
+  }
+  .btn {
+    min-height: 46px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+  .card {
+    padding: 18px 16px;
+  }
+}
 
 
 @media (prefers-reduced-motion:reduce){
