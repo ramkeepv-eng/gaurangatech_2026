@@ -258,7 +258,7 @@ function buildNav(){
   document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeDD(); closeM(); }});
 
   const acc = (id, label, links) => `<button class="ml" aria-expanded="false" aria-controls="${id}" data-acc>${label} ${ICONS.chev}</button><div class="macc" id="${id}">${links}</div>`;
-  $('#mnav').innerHTML = `<div class="mnav-top"><a class="logo" href="#home"><img src="images/logo-sun.png" alt=""><span><b>Gauranga</b><small>TECHNOLOGIES</small></span></a><button class="burger" style="display:inline-flex" id="mclose" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16"/></svg></button></div>
+  $('#mnav').innerHTML = `<div class="mnav-top"><a class="logo" href="#home" aria-label="Gauranga Technologies home"><img src="${FULLLOGO}" alt="Gauranga"></a><button class="burger" style="display:inline-flex" id="mclose" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16"/></svg></button></div>
    ${acc('m-sol','Solutions', `<a href="#solutions">All solutions</a>`+SOL.map(s=>`<a href="#sol-${s.slug}">${esc(s.name)}</a>`).join(''))}
    ${acc('m-prod','Products', `<a href="#products">All 16 products</a>`+FAM.map(f=>`<a href="#fam-${f.slug}">${esc(f.name)}</a>`).join(''))}
    <a class="ml" href="#case-studies">Case Studies</a><a class="ml" href="#home">Home</a><a class="ml" href="#about">About Us</a><a class="ml" href="#careers">Careers</a><a class="ml" href="#contact">Contact</a>
@@ -402,7 +402,7 @@ P.home = () => `
    <blockquote class="rv" style="margin:6px 0 0;border-left:3px solid var(--sun);padding:6px 0 6px 18px;font-family:var(--f-display);font-stretch:108%;font-size:20px;font-weight:600;line-height:1.4;color:var(--ink)">“Ability proceeds from a fusion of skills, knowledge, understanding and imagination, consolidated by experience.”<span style="display:block;margin-top:8px;font-family:var(--f-body);font-size:13.5px;font-weight:500;color:var(--muted)">Ramanan Nagarajan, CEO &amp; Co-founder</span></blockquote></div>
   <div class="tcards" style="flex:1 1 440px;min-width:0">${QUOTES.map(q=>`<figure class="tcard rv" style="margin:0"><svg width="26" height="20" viewBox="0 0 44 34" fill="#f0a428" aria-hidden="true"><path d="M0 34V20C0 9 6 2 17 0l2 5c-6 2-9 6-9 11h8v18H0zm25 0V20c0-11 6-18 17-20l2 5c-6 2-9 6-9 11h8v18H25z"/></svg><q>${esc(q.q)}</q><figcaption class="who"><b>${esc(q.w)}</b>, ${esc(q.r)}</figcaption><a class="link" href="#resources" style="font-size:14px;font-weight:600">View reference letter →</a></figure>`).join('')}</div></div>`, 'alt')}
 
- ${S(`<div class="sec-head"><div><span class="eyebrow rv">Global presence</span><h2 class="h2 rv">India · USA · <span class="hl">Australia</span></h2></div><a class="btn btn-outline mag" href="#contact">Office details ${ARR}</a></div>
+ ${S(`<div class="sec-head"><div><span class="eyebrow rv">Global presence</span><h2 class="h2 rv">India</h2></div><a class="btn btn-outline mag" href="#contact">Office details ${ARR}</a></div>
   <div class="grid g4">${OFFICES.map(o=>`<div class="card tilt rv"><span class="eyebrow" style="font-size:11px">${esc(o[0])}</span><h3 style="font-size:20px">${esc(o[1])}</h3><p style="font-size:14px">${esc(o[2])}</p></div>`).join('')}</div>`)}`;
 
 P.solutions = () => pageHero([['Solutions']], 'Solutions', 'Engineering solutions <span class="hl">for industry</span>', 'From the first schematic to field-proven devices and plant software.', '', ['site-pcb-gold','gen-control-room','gen-manufacturing','gen-studio']) +
@@ -518,7 +518,7 @@ P.about = () => pageHero([['About Us']], 'About us', 'Driven by technology <span
   <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:16px"><span class="eyebrow rv">Quality &amp; certifications</span><h2 class="h2 rv" style="font-size:clamp(28px,3.2vw,44px)">ISO 9001:2015 <span class="hl">certified.</span></h2><p class="lead rv">Gauranga Tech is an ISO 9001:2015 certified organization, demonstrating our commitment to quality management, operational excellence, and customer satisfaction.</p><a class="btn btn-primary mag" href="#resources" style="align-self:flex-start">Open Resources ${ARR}</a></div>
   <div style="flex:1 1 300px;min-width:0;display:flex;justify-content:center"><div class="cert rv media" data-cur="view"><img src="${IMG('about-iso-cert')}" alt="ISO 9001:2015 certificate of registration" loading="lazy" style="transform:none"></div></div>
  </div>`) +
- S(`<div class="sec-head"><div><span class="eyebrow rv">Global presence</span><h2 class="h2 rv">India · USA · <span class="hl">Australia</span></h2></div></div>
+ S(`<div class="sec-head"><div><span class="eyebrow rv">Global presence</span><h2 class="h2 rv">India</h2></div></div>
   <div class="map rv" id="mapbox"><canvas id="mapc" aria-hidden="true"></canvas>
    <div class="pin" style="left:68.5%;top:44%"><i></i><span>Navi Mumbai · HQ</span></div>
    <div class="pin" style="left:70.6%;top:52%"><i></i><span>Madurai · Studio</span></div>
